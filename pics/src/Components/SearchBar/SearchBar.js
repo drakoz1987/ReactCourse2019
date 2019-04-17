@@ -7,10 +7,14 @@ class SearchBar extends Component {
   state = {
     searchQuery:'',
   }
+  onFormSubmit = (event) => {
+    event.preventDefault();
+    this.props.onSubmit(this.state.searchQuery);
+  }
   render(){
     return (
       <div className='ui segment search-bar'>
-        <form className='ui form search-form'>
+        <form className='ui form search-form' onSubmit={this.onFormSubmit}>
           <div className='field'>
             <label htmlFor='search-input' className='label'>Image Search
               <input
