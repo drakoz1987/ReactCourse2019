@@ -6,11 +6,11 @@ import './SearchBar.css';
 class SearchBar extends Component {
   state = {
     searchQuery:'',
-  }
+  };
   onFormSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state.searchQuery);
-  }
+  };
   render(){
     return (
       <div className='ui segment search-bar'>
