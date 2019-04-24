@@ -1,5 +1,6 @@
 import React from 'react';
 import './ImageList.css';
+import ImageCard from '../ImageCard/ImageCard'
 //import masonry from 'masonry-layout';
 
 const ImageList = (props) => {
@@ -8,7 +9,7 @@ const ImageList = (props) => {
           <h1>Your Search Found {props.imageList.length}</h1>
           <div className='image-gallery'>
               {props.imageList.map((item)=>{
-                  return <img className='grid-element' alt={item.description} key={item.id} src={item.urls.regular} />
+                  return <ImageCard image={item} />
               })}
           </div>
       </div>)
